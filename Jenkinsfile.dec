@@ -1,0 +1,17 @@
+pipeline {
+  agent any
+  stages {
+    stage('Build'){
+      steps{
+        sh 'echo "About to build Java app"'
+        sh 'javac HelloWorld.java'
+      }   
+    }
+    stage('Test){
+      steps {
+      	sh 'echo "Checking application works"'
+      	sh 'java HelloWorld | grep Hello'
+      }
+    }
+  }
+}
