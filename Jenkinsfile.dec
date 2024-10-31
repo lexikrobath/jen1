@@ -7,7 +7,7 @@ pipeline {
         sh 'javac HelloWorld.java'
       }   
     }
-    stage('Test){
+    stage('Test'){
       steps {
       	sh 'echo "Checking application works"'
       	sh 'java HelloWorld | grep Hello'
